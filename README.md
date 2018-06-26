@@ -1,4 +1,5 @@
 
+
 # EventBus
 A simple demo on how event bus can be used.
 
@@ -55,7 +56,7 @@ We recommend obtaining the single instance of bus through injection or another a
 
 Or get singleton like following:
 
-```
+```java
 Bus bus = BusProvider.getInstance();
 ```
 
@@ -63,7 +64,7 @@ Bus bus = BusProvider.getInstance();
 
 To subscribe to an event, declare and annotate a method with @Subscribe. The method should be public and take only a single parameter.
 
-```
+```java
 @Subscribe
 public void onEvent(SomeEvent event) {
     // TODO: Do something
@@ -72,7 +73,7 @@ public void onEvent(SomeEvent event) {
 
 You can also create subscription like following:
 
-```
+```java
 CustomSubscriber<SomeEvent> customSubscriber = bus.obtainSubscriber(SomeEvent.class,
     new Consumer<SomeEvent>() {
         @Override
@@ -93,18 +94,18 @@ CustomSubscriber<SomeEvent> customSubscriber = bus.obtainSubscriber(SomeEvent.cl
 
 To receive events, a class instance needs to register with the bus.
 
-```
+```java
 bus.register(this);
 ```
 
 The customSubscriber also needs to register with the bus.
 
-```
+```java
 bus.registerSubscriber(this, customSubscriber);
 ```
 
 Remember to also call the unregister method when appropriate.
-```
+```java
 bus.unregister(this);
 ```
 
@@ -112,7 +113,7 @@ bus.unregister(this);
 
 To publish a new event, call the post method:
 
-```
+```java
 bus.post(new SomeEvent("Message"));
 ```
 
@@ -120,7 +121,7 @@ bus.post(new SomeEvent("Message"));
 
 Gradle:
 
-```
+```java
 implementation 'com.github.kapilmhr:RxBus:1.0'
 ```
     
