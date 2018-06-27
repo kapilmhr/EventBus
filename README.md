@@ -4,6 +4,14 @@
 A simple demo on how event bus can be used.
 
 
+#### Add EventBus to your project
+
+Gradle:
+
+```java
+implementation 'org.greenrobot:eventbus:3.1.1'
+```
+
 EventBus in 3 steps
 -------------------
 1. Define events:
@@ -48,6 +56,15 @@ RxBus
 ===========
 
 Event bus based on RxJava and optimized for Android.
+
+
+#### Add RxBus to your project
+
+Gradle:
+
+```java
+implementation 'com.github.kapilmhr:RxBus:1.0'
+```
 
 Usage
 -------
@@ -117,11 +134,5 @@ To publish a new event, call the post method:
 bus.post(new SomeEvent("Message"));
 ```
 
-#### Add RxBus to your project
 
-Gradle:
-
-```java
-implementation 'com.github.kapilmhr:RxBus:1.0'
-```
     
